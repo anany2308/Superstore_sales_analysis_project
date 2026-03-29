@@ -146,7 +146,7 @@ print(ratio_analysis.head())
 
 
 
-## 📊 Findings and Conclusion  
+## Findings and Conclusion  
 
 - **Monthly Sales Trends:** Sales vary across months, indicating seasonal demand patterns with certain months generating significantly higher revenue.  
 
