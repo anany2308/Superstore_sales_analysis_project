@@ -12,3 +12,15 @@ This project analyzes an e-commerce dataset using Python in Jupyter Notebook to 
 - Analyze profit by category and sub-category.
 - Study sales and profit by customer segment.
 - Calculate sales-to-profit ratio.
+
+## Business Problems and Solutions
+
+### Import Libraries
+import pandas as pd
+
+import plotly.express as px
+import plotly.graph_objects as go
+import plotly.io as pio
+import plotly.colors as colors 
+
+pio.templates.default = "plotly_white"
