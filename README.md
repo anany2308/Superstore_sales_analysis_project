@@ -144,7 +144,97 @@ print(ratio_analysis.head())
 **Objective:** Analyze efficiency of sales in generating profit.
 
 
+### 8. Regional Performance Analysis
+```python
+region_analysis = module.groupby('Region', as_index=False)[['Sales', 'Profit']].sum()
 
+region_analysis['Profit_Ratio'] = region_analysis['Profit'] / region_analysis['Sales']
+
+region_analysis = region_analysis.sort_values(by='Sales', ascending=False)
+
+display(region_analysis)
+
+fig1 = px.bar(region_analysis, x='Region', y='Sales', title='Sales by Region')
+fig1.show()
+
+fig2 = px.bar(region_analysis, x='Region', y='Profit', title='Profit by Region')
+fig2.show()
+```
+**Objective:** To identify top and underperforming regions based on sales and profitability.
+
+
+### 9. Sales to Profit Ratio Analysis
+```python
+ratio_analysis = module.groupby('Category', as_index=False)[['Sales', 'Profit']].sum()
+
+ratio_analysis['Profit_Ratio'] = ratio_analysis['Profit'] / ratio_analysis['Sales']
+
+ratio_analysis = ratio_analysis.sort_values(by='Profit_Ratio')
+
+display(ratio_analysis)
+
+fig = px.bar(ratio_analysis, x='Category', y='Profit_Ratio',
+             title='Sales to Profit Ratio by Category')
+fig.show()
+```
+**Objective:** To evaluate profitability efficiency across product categories.
+
+### 9. Discount Impact on Profit
+```python
+discount_analysis = module.groupby('Discount', as_index=False)[['Sales', 'Profit']].sum()
+
+discount_analysis = discount_analysis.sort_values(by='Discount')
+
+display(discount_analysis)
+
+fig = px.scatter(module, x='Discount', y='Profit',
+                 title='Discount vs Profit',
+                 trendline='ols')
+fig.show()
+```
+**Objective:** To analyze the relationship between discount levels and profit.
+
+
+### 10. Customer Segment Profitability
+```python
+segment_analysis = module.groupby('Segment', as_index=False)[['Sales', 'Profit']].sum()
+
+segment_analysis['Profit_Ratio'] = segment_analysis['Profit'] / segment_analysis['Sales']
+
+segment_analysis = segment_analysis.sort_values(by='Profit', ascending=False)
+
+display(segment_analysis)
+
+fig = px.bar(segment_analysis, x='Segment', y='Profit',
+             title='Profit by Customer Segment')
+fig.show()
+```
+**Objective:** To identify the most valuable and least profitable customer segments.
+
+
+### 11. Pareto Analysis (Top vs Bottom Products)
+```python
+product_analysis = module.groupby('Product Name', as_index=False)[['Sales', 'Profit']].sum()
+
+product_analysis = product_analysis.sort_values(by='Sales', ascending=False)
+
+product_analysis['Cumulative_Sales'] = product_analysis['Sales'].cumsum()
+
+product_analysis['Cumulative_Percentage'] = (
+    product_analysis['Cumulative_Sales'] / product_analysis['Sales'].sum()
+) * 100
+
+display(product_analysis.head(10))
+
+top_products = product_analysis.head(50)
+
+fig = px.line(top_products,
+              x=top_products.index,
+              y='Cumulative_Percentage',
+              title='Pareto Analysis (Top Products Contribution)')
+fig.show()
+```
+**Objective:** To identify key products driving the majority of revenue.
 
 ## Findings and Conclusion  
 
