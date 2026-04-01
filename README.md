@@ -179,7 +179,7 @@ fig.show()
 ```
 **Objective:** To evaluate profitability efficiency across product categories.
 
-### 9. Discount Impact on Profit
+### 10. Discount Impact on Profit
 ```python
 discount_analysis = module.groupby('Discount', as_index=False)[['Sales', 'Profit']].sum()
 
@@ -195,7 +195,7 @@ fig.show()
 **Objective:** To analyze the relationship between discount levels and profit.
 
 
-### 10. Customer Segment Profitability
+### 11. Customer Segment Profitability
 ```python
 segment_analysis = module.groupby('Segment', as_index=False)[['Sales', 'Profit']].sum()
 
@@ -212,7 +212,7 @@ fig.show()
 **Objective:** To identify the most valuable and least profitable customer segments.
 
 
-### 11. Pareto Analysis (Top vs Bottom Products)
+### 12. Pareto Analysis (Top vs Bottom Products)
 ```python
 product_analysis = module.groupby('Product Name', as_index=False)[['Sales', 'Profit']].sum()
 
