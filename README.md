@@ -250,6 +250,12 @@ fig.show()
 
 - **Profit Distribution:** Profit is unevenly distributed, highlighting that not all high-selling products are profitable.  
 
-- **Sales-to-Profit Efficiency:** Variations in the sales-to-profit ratio indicate inefficiencies in pricing or cost management.  
+- **Sales-to-Profit Efficiency:** Variations in the sales-to-profit ratio indicate inefficiencies in pricing or cost management.
+  
+- **Discount Impact:** Higher discounts negatively affect profitability, with excessive discounting leading to losses.
+
+- **Pareto Effect:** A small proportion of products contribute to the majority of total sales and profit.
+
+
 
 This analysis provides a comprehensive understanding of sales performance and profitability. It highlights key areas for improvement, such as optimizing low-performing products, focusing on high-value customer segments, and improving profit margins to drive better business decisions.
